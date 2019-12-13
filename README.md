@@ -1,5 +1,8 @@
-## 主题配置
+## hugo-theme-cactusnix
+hugo 博客主题
 
-默认模版为archetypes之下，需要删除，上级archetypes
-
-时间具有格式化
+## 版本记录
+- 1.0 版本发布。Fri Dec 13 2019
+  - 基本样式完成
+  - 基本功能完成
+- 
