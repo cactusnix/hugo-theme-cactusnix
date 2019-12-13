@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <div class="list">
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <span></span>
+          <div class="boxTitle">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </div>
+          <div class="time">
+            <span>{{ dateFormat "Jan 02" .Date }}</span>
+            <span>{{dateFormat "15:04" .Date }}</span>
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

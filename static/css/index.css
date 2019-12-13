@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "Myriad Apple";
+  src: url(../fonts/Myriad_Apple.otf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh;
+}
+
+body > * {
+  font-family: "Myriad Apple", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+/* 通用样式 */
+/* 通用的icon样式 */
+/* .icon {
+  background-image: url(../icons/tag.png);
+  background-color: #1F6751;
+  height: 2rem;
+  width: 2rem;
+} */
+
+a {
+  text-decoration: none;
+  color: #9EAC86;
+}
+
+.divider {
+  background-color: #9EAC86;
+  height: 0.05rem;
+  margin-top: 1rem;
+}
+
+/* 头部样式 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 37.5rem;
+  background-color: white;
+}
+
+.hTitle {
+  font-size: 6.25rem;
+}
+
+.hDescription {
+  font-size: 1.25rem;
+}
+
+.main {
+  background-color: #F3F3F3;
+  flex: 1;
+  padding-bottom: 5rem;
+}
+
+/* 底部样式 */
+.footer {
+  background-color: #F3F3F3;
+  padding: 1%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* 卡片样式 */
+.card {
+  /* background-color: cadetblue; */
+  margin: 5% 15%;
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+}
+
+.cardContent {
+  flex: 1;
+  /* padding: 1%; */
+  /* padding-bottom: 1%; */
+}
+
+.cardContent p {
+  /* color: wheat; */
+}
+
+.cardTitle a {
+  font-size: 1.25rem;
+  color: #1F6751;
+}
+
+.cardTime {
+  font-size: 0.9rem;
+  color: #D87FA1;
+}
+
+.tagList {
+  float: right;
+  padding: 0.5rem;
+}
+
+.tagList a {
+  text-decoration: underline;
+}
+
+.categoryList {
+  float: right;
+  padding: 0.5rem;
+}
+
+.categoryList a {
+  text-decoration: underline;
+}
+
+/* 单页面样式 */
+.singleTitle {
+  font-size: 1.8rem;
+}
+
+/* list时间轴 */
+.list {
+  background-color: #F3F3F3;
+  padding: 5% 5%;
+}
+
+.list ul {
+  position: relative;
+  /* background-color: #9EAC86; */
+  list-style-type: none;
+  transition: all 0.5s linear;
+  width: 50%;
+  margin: auto;
+  padding: 0;
+}
+
+.list ul:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: "";
+  border: 0.1rem dashed #9EAC86;
+}
+
+.list ul li {
+  margin: 5rem 1rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  width: 90%;
+}
+
+.list ul li > span {
+  content: "";
+  height: 100%;
+  border: 0.1rem solid #9EAC86;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+}
+
+.list ul li > span:before, .list ul li > span:after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ff6d6d;
+  border: 1px solid #fff;
+  position: absolute;
+  left: -0.3rem;
+}
+
+.list ul li > span:before {
+  top: -0.75rem;
+}
+
+.list ul li > span:after {
+  top: 100%;
+}
+
+.list .time span {
+  position: absolute;
+  left: -5rem;
+  color: #D87FA1;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.list .time span:first-child {
+  top: -1rem;
+}
+
+.list .time span:last-child {
+  top: 90%
+}
+
+/* markdown 语法 */
+.single {
+  margin: 5% 20%;
+}
+
+.single .content {
+  line-height: 2rem;
+  margin-top: 2rem;
+}
+
+/* 内容字体设置 */
+.single p {
+  font-size: 1rem;
+}
+
+blockquote {
+  border-left: 0.15rem solid #9EAC86;
+  margin-block-start: 0.1rem;
+  margin-block-end: 0.1rem;
+  margin-inline-start: 0.1rem;
+  margin-inline-end: 0.1rem;
+  padding-left: 1rem;
+  color: #1F6751;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,25 @@
+{{ define "main"}}
+  <div class="single">
+    <div class="singleTitle">
+      {{ .Title }}
+    </div>
+    <div>
+      tags:
+      {{ range .Params.tags }}
+      <span>
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+      </span>
+      {{ end }}
+      categories:
+      {{ range .Params.categories }}
+      <span>
+        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+      </span>
+      {{ end }}
+    </div>
+    <div class="divider"></div>
+    <div class="content">
+      <p>{{ .Content }}</p>
+    </div>
+  </div>
+{{ end }}
