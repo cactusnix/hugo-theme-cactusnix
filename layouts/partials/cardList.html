@@ -1,0 +1,26 @@
+{{ range first 5 .Site.RegularPages}}
+    <div class="card">
+      <div class="cardContent">
+        <div class="cardTitle">
+          <a href="{{ .Permalink}}">{{ .Title }}</a>
+        </div>
+        <div class="cardTime">
+					<span>{{ dateFormat "Jan 02 2006" .Date}}</span>
+					{{ range .Params.categories }}
+          <span>
+            <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">"{{ . }}"</a>
+          </span>
+          {{ end }}
+				</div>
+				<div class="tagList">
+          {{ range .Params.tags }}
+          <span>
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
+          </span>
+          {{ end }}
+        </div>
+        <p>{{ .Summary }}</p>
+        <a href="{{ .Permalink}}">Read More ...</a>
+      </div>
+    </div>
+  {{ end }}
