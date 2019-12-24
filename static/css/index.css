@@ -38,14 +38,23 @@ a {
 
 /* 导航栏 */
 .navBar {
-  background-color: #fff;
+  background-color: #272727;
+}
+
+.menuDiv {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
 }
 
-.navBar a {
+.menuDiv a {
   margin-left: 1rem;
+  color: whitesmoke;
+}
+
+.shadowDiv {
+  width: 100%;
+  box-shadow: -1rem 1rem 0.1rem rgba(32,33,36,0.28);
 }
 
 /* 头部样式 */
@@ -55,15 +64,18 @@ a {
   align-items: center;
   justify-content: center;
   height: 37.5rem;
-  background-color: white;
+  background: url(../images/background_1.jpg) center center no-repeat;
+  background-size: cover;
 }
 
 .hTitle {
   font-size: 6.25rem;
+  color: whitesmoke;
 }
 
 .hDescription {
   font-size: 1.25rem;
+  color: whitesmoke;
 }
 
 .main {
@@ -144,7 +156,7 @@ a {
   padding: 0;
 }
 
-.list ul:before {
+.list ul::before {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -171,7 +183,7 @@ a {
   left: -1rem;
 }
 
-.list ul li > span:before, .list ul li > span:after {
+.list ul li > span::before, .list ul li > span::after {
   content: "";
   width: 0.5rem;
   height: 0.5rem;
@@ -182,11 +194,11 @@ a {
   left: -0.3rem;
 }
 
-.list ul li > span:before {
+.list ul li > span::before {
   top: -0.75rem;
 }
 
-.list ul li > span:after {
+.list ul li > span::after {
   top: 100%;
 }
 

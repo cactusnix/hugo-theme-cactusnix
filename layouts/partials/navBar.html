@@ -1,11 +1,14 @@
 <div class="navBar">
-	<div>
-		<a href="{{ .Site.BaseURL}}">{{ .Site.Params.home }}</a>
+	<div class="menuDiv">
+		<div>
+			<a href="{{ .Site.BaseURL}}">{{ .Site.Params.home }}</a>
+		</div>
+		<div>
+			{{ $currentPage := . }}
+			{{ range .Site.Menus.main }}
+				<a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+			{{ end }}
+		</div>
 	</div>
-	<div>
-		{{ $currentPage := . }}
-		{{ range .Site.Menus.main }}
-			<a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-		{{ end }}
-	</div>
+	<div class="shadowDiv"></div>
 </div>
