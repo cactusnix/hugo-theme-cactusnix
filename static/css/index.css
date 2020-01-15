@@ -241,7 +241,7 @@ a {
 /* markdown img */
 .single .content img {
   width: 100%;
-  height: 20rem;
+  height: auto;
 }
 
 blockquote {
