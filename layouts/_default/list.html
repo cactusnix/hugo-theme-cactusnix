@@ -1,17 +1,10 @@
 {{ define "main" }}
-  {{ partial "navBar.html" . }}
-  <div class="list">
+  <div class="list card">
     <ul>
       {{ range .Pages }}
         <li>
-          <span></span>
-          <div class="boxTitle">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </div>
-          <div class="time">
-            <span>{{ dateFormat "Jan 02" .Date }}</span>
-            <span>{{dateFormat "15:04" .Date }}</span>
-          </div>
+          <a class="normal-size" href="{{ .Permalink }}">{{ .Title }}</a>
+          <div class="small-size">{{ dateFormat "2006-01-02 15:04" .Date }}</div>
         </li>
       {{ end }}
     </ul>

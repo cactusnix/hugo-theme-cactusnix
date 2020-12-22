@@ -1,0 +1,138 @@
+/* 自定义样式 */
+
+/* header css */
+.nav-bar {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.nav-bar > a {
+  padding: 0 20px;
+}
+
+.nav-descripiton {
+  font-size: 0.95em;
+}
+
+/* index css */
+.card-content {
+}
+
+.card-title {
+  color: #6d6d6d;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: normal;
+}
+
+.card-summary p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.card-img {
+  height: 360px;
+}
+
+.subtitle-part {
+  padding: 10px 0;
+  font-size: 0.85em;
+}
+
+.subtitle-part > div {
+  display: flex;
+  align-items: center;
+}
+
+.subtitle-part div:nth-child(2) {
+  padding-left: 15px;
+}
+
+.summary-part {
+  padding: 4px 0;
+}
+
+.paginator {
+  padding: 20px 30px;
+}
+
+/* header css */
+.header {
+  padding: 50px 0;
+}
+
+/* single page css */
+.single {
+  max-width: 700px;
+  padding: 20px 30px;
+}
+
+/* list css */
+.list {
+  padding: 20px 30px;
+}
+
+/* footer css */
+.footer {
+  padding: 10px 0;
+}
+
+/* macOS风格代码块 */
+pre {
+  border-radius: 5px;
+  padding: 1.8em 1em 1em 1em;
+  font-size: 0.9rem;
+  line-height: 1.35em;
+  overflow: auto;
+}
+
+pre::before {
+  content: ' ';
+  position: absolute;
+  border-radius: 50%;
+  background: #ff5f56;
+  width: 12px;
+  height: 12px;
+  top: 9px;
+  left: 9px;
+  -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+  box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+}
+
+/* 代码复制、折叠功能 */
+.code_lang {
+  position: absolute;
+  top: 9px;
+  right: 62px;
+  font-size: 0.8em;
+  filter: invert(50%);
+}
+
+.code_copy {
+  position: absolute;
+  top: 9px;
+  right: 37px;
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+  background: url(../icons/copy.svg);
+  background-size: cover;
+}
+
+.code-expand {
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  cursor: pointer;
+  transition: all 0.4s;
+  transform: rotate(0deg);
+  height: 12px;
+  width: 12px;
+  background: url(../icons/arrow.svg);
+  background-size: cover;
+}
+
+.code-closed .code-expand {
+  transform: rotate(180deg) !important;
+  transition: all 0.4s;
+}

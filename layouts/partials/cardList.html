@@ -1,26 +1,54 @@
-{{ range first 5 .Site.RegularPages}}
-    <div class="card">
-      <div class="cardContent">
-        <div class="cardTitle">
-          <a href="{{ .Permalink}}">{{ .Title }}</a>
-        </div>
-        <div class="cardTime">
-					<span>{{ dateFormat "Jan 02 2006" .Date}}</span>
-					{{ range .Params.categories }}
-          <span>
-            <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">"{{ . }}"</a>
-          </span>
-          {{ end }}
-				</div>
-				<div class="tagList">
-          {{ range .Params.tags }}
-          <span>
-            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
-          </span>
-          {{ end }}
-        </div>
-        <p>{{ .Summary }}</p>
-        <a href="{{ .Permalink}}">Read More ...</a>
+<div class="card-content">
+  {{ range .Paginator.Pages}}
+  <div class="card" style="padding: 20px 30px;">
+    <h4 class="card-title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h4>
+    <div class="subtitle-part second-center">
+      <div>
+        <embed class="icon-svg" src="{{ "/icons/createTime.svg" }}" type="image/svg+xml" />
+        <span>{{ dateFormat "2006-01-02 15:04" .Date}}</span>
+      </div>
+      <div>
+        <embed class="icon-svg" src="{{ "/icons/readingTime.svg" }}" type="image/svg+xml" />
+        <span>{{ .ReadingTime }} mins</span>
       </div>
     </div>
+    <a href="{{ .Permalink}}">
+      {{ if .Params.img }}
+      <img class="card-img" src="{{ .Params.img }}" alt="图片加载失败">
+      {{ else }}
+      <img class="card-img" src="/images/default.png" alt="图片加载失败">
+      {{ end }}
+    </a>
+    <div class="summary-part space-center smallx-size">
+      <div class="card-summary">{{ .Summary }}</div>
+      <div>
+        {{ range .Params.categories }}
+        <span>
+          <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">"{{ . }}"</a>
+        </span>
+        {{ end }}
+        {{ range .Params.tags }}
+        <span>
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
+        </span>
+        {{ end }}
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
   {{ end }}
+  <div class="smallx-size card space-center paginator">
+    {{ if .Paginator.HasPrev }}
+    <div class="prev">
+      <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">上一页</a>
+    </div>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+    <div class="next">
+      <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">下一页</a>
+    </div>
+    {{ end }}
+  </div>
+</div>

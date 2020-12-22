@@ -1,5 +1,9 @@
-<div id="header" class="header">
-  {{ partial "navBar.html" . }}
-  <div class="hTitle">{{ .Site.Title }}</div>
-  <div class="hDescription">{{ .Site.Params.description }}</div>
+<div class="third-center card header">
+  <div class="nav-bar">
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    {{ end }}
+  </div>
+  <h2 class="nav-title">{{ .Site.Params.home }}</h2>
+  <div class="nav-descripiton">{{ .Site.Params.description }}</div>
 </div>
